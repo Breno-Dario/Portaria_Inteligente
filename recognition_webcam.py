@@ -546,13 +546,11 @@ class FaceApp:
         self.update_last_log_time()
 
     def update_last_log_time(self):
-        """Atualiza o timestamp do último registro"""
         current_time = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
         self.last_log_label.config(text=current_time)
         self.root.after(1000, self.update_last_log_time)
 
     def view_logs(self):
-
         # Aquivo de registro de acesso
         try:
             if os.path.exists(log_file):
@@ -577,7 +575,7 @@ class FaceApp:
             
             self.user_label.config(text=formatted_name, fg=self.colors["success"])
             self.ra_label.config(text=ra, fg=self.colors["success"])
-            self.status_label.config(text="✅ ACESSO LIBERADO", fg=self.colors["success"])
+            self.status_label.config(text="ACESSO LIBERADO", fg=self.colors["success"])
             
             if remaining_time > 0:
                 self.time_label.config(text=f"{int(remaining_time)} segundos", fg=self.colors["success"])
@@ -595,7 +593,7 @@ class FaceApp:
             
             self.user_label.config(text="---", fg=self.colors["accent"])
             self.ra_label.config(text="---", fg=self.colors["accent"])
-            self.status_label.config(text="❌ ACESSO NEGADO", fg=self.colors["error"])
+            self.status_label.config(text="ACESSO NEGADO", fg=self.colors["error"])
             self.time_label.config(text="---", fg=self.colors["text"])
 
     def start(self):
