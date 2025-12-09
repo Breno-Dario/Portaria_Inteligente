@@ -224,8 +224,9 @@ A UI possui:
 
 <h3>Autores</h3>
 
--Breno Dario
--Alexandre Jesus
+- Breno Dario
+- Alexandre Jesus
 
 Sistemas de Informação – 2025
 Projeto: **Portaria Inteligente com Reconhecimento Facial**
+
