@@ -11,7 +11,7 @@ from datetime import datetime
 import platform
 
 
-#   SISTEMA DE ACESSO E LOG
+# SISTEMA DE ACESSO E LOG
 authorized_people = {"Breno_Dario_RA1371392322016"}
 last_access = {}
 access_granted_until = {}
@@ -30,11 +30,17 @@ def inicializar_log():
     except:
         return False
 
+
+# ========= CORRIGIDO: REGISTRAR NÃO IDENTIFICADO ==========
 def registrar_acesso(nome, ra, status):
     try:
         data_hora = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
 
-        if "_RA" in nome:
+        # --- Correção: gravar “Não identificado” quando for o caso ---
+        if nome in ["Não identificado", "Nao identificado"]:
+            nome_formatado = "Não identificado"
+            ra = "N/A"
+        elif "_RA" in nome:
             nome_formatado = nome.split("_RA")[0].replace("_", " ")
         else:
             nome_formatado = nome.replace("_", " ")
@@ -45,11 +51,14 @@ def registrar_acesso(nome, ra, status):
     except Exception as e:
         print(f"Erro ao registrar acesso: {e}")
 
+
+# ========= CONTROLE DE ACESSO (CORRIGIDO) ==========
 def access_control(name, cooldown=5, grant_duration=30):
     agora = time.time()
 
+    # ---- REGISTRA NÃO IDENTIFICADO ----
     if name == "Não identificado":
-        registrar_acesso("Desconhecido", "N/A", "NEGADO")
+        registrar_acesso("Não identificado", "N/A", "NEGADO")
         return "Acesso NEGADO"
     
     if name not in authorized_people:
@@ -146,7 +155,7 @@ def format_name(full_name):
     return full_name.replace("_", " ")
 
 
-#   🔧 LÓGICA DE RECONHECIMENTO
+#LÓGICA DE RECONHECIMENTO
 def recognize_faces(frame):
     if face_classifier is None:
         cv2.putText(frame, "ERRO: Classificador não carregado", (10, 30),
@@ -209,10 +218,8 @@ def recognize_faces(frame):
     return frame, status, recognized_name
 
 
-# --------------------------------------------------------------------------
-#   INTERFACE COM A CORREÇÃO PEDIDA
-# --------------------------------------------------------------------------
 
+#   INTERFACE COM A CORREÇÃO PEDIDA
 class FaceApp:
     def __init__(self, root):
         self.root = root
@@ -488,13 +495,11 @@ class FaceApp:
         except Exception as e:
             messagebox.showerror("Erro", str(e))
 
-    # ----------------------------------------------------------------------
-    #   🔧 FUNÇÃO CORRIGIDA — MOSTRA “ACESSO NEGADO / NÃO IDENTIFICADO”
-    # ----------------------------------------------------------------------
+    # FUNÇÃO CORRIGIDA — MOSTRA “ACESSO NEGADO / NÃO IDENTIFICADO”
     def update_user_info(self, name, status, remaining_time=0):
         current_time = time.time()
 
-        # --- Se NÃO identificado -> mostra NEGADO imediatamente ---
+        # Se NÃO identificado -> mostra NEGADO imediatamente
         if name == "Não identificado":
             self.user_label.config(text="Não identificado", fg=self.colors["error"])
             self.ra_label.config(text="---", fg=self.colors["error"])
@@ -503,7 +508,7 @@ class FaceApp:
             self.access_granted_time = 0
             return
 
-        # --- Se identificado e liberado ---
+        # Se identificado e liberado
         if status == "Acesso LIBERADO":
             formatted_name = format_name(name)
             ra = extract_ra_from_name(name)
@@ -520,13 +525,13 @@ class FaceApp:
             self.access_granted_time = current_time
             return
 
-        # --- Se acesso negado mas ainda dentro do tempo de liberação anterior ---
+        # Se acesso negado mas ainda dentro do tempo de liberação anterior ---
         if current_time - self.access_granted_time < self.access_duration:
             remaining = self.access_duration - (current_time - self.access_granted_time)
             self.time_label.config(text=f"{int(remaining)}s", fg=self.colors["success"])
             return
 
-        # --- Caso contrário, acesso negado ---
+        # Caso contrário, acesso negado ---
         self.user_label.config(text="---", fg=self.colors["accent"])
         self.ra_label.config(text="---", fg=self.colors["accent"])
         self.status_label.config(text="ACESSO NEGADO", fg=self.colors["error"])
@@ -581,6 +586,7 @@ class FaceApp:
             self.video_label.image = img
 
         cam.release()
+
 
 
 # MAIN
