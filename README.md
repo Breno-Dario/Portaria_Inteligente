@@ -208,5 +208,10 @@ A UI possui:
 - Breno Dario
 - Alexandre Jesus
 
+<h2>Foto</h2>
+<img width="1363" height="721" alt="image" src="https://github.com/user-attachments/assets/81942a32-043a-4eb4-86e4-ba0a6ba67d65" />
+
+
 Sistemas de Informação – 2025
 Projeto: **Portaria Inteligente com Reconhecimento Facial**
+
