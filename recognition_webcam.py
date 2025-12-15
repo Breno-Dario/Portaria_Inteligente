@@ -12,7 +12,7 @@ import platform
 
 
 # SISTEMA DE ACESSO E LOG
-authorized_people = {"Breno_Dario_RA1371392322016"}
+authorized_people = {"Breno_Dario_RA7777777777777"}
 last_access = {}
 access_granted_until = {}
 log_file = "acessos_registrados.txt"
