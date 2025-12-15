@@ -3,9 +3,7 @@
 Sistema de controle de acesso utilizando reconhecimento facial, interface gráfica em Tkinter, e geração automática de logs de acesso.
 Desenvolvido para fins acadêmicos por Breno Dario e Alexandre Jesus.
 
----
-
-<h3>Funcionalidades</h3>
+<h2>Funcionalidades</h2>
 
 - Reconhecimento facial em tempo real (Eigenfaces, Fisherfaces e LBPH)
 - Controle de acesso com temporizador (liberação válida por 30s)
@@ -16,9 +14,7 @@ Desenvolvido para fins acadêmicos por Breno Dario e Alexandre Jesus.
 - Tratamento de erros, logs e informações detalhadas
 - Compatível com Windows, Linux e macOS
 
----
-
-<h3>Estrutura do Projeto</h3>
+<h2>Estrutura do Projeto</h2>
 
 ```SHELL
 📁 projeto/
@@ -38,8 +34,8 @@ Desenvolvido para fins acadêmicos por Breno Dario e Alexandre Jesus.
 ├── portaria_inteligente.py (código principal)
 └── README.md
 ```
----
- <h3>Requisitos</h3>
+
+ <h2>Requisitos</h2>
 
 **Python 3.8+**
 
@@ -54,9 +50,7 @@ pip install tk
 
 Certifique-se de que possui o OpenCV com módulos contrib, pois o recognizer LBPH, Eigen e Fisher estão nele.
 
----
-
-<h3>Dataset – Como organizar</h3>
+<h2>Dataset – Como organizar</h2>
 
 Cada usuário deve ter sua pasta com fotos:
 
@@ -76,9 +70,8 @@ Os nomes das pastas devem seguir o padrão:
 ```nginx
 Nome_Sobrenome_RA123456789
 ```
----
 
-<h3>Treinamento do Reconhecedor</h3>
+<h2>Treinamento do Reconhecedor</h2>
 
 O bloco inicial do seu código:
 
@@ -88,7 +81,6 @@ eigen_classifier.train(faces, ids)
 fisher_classifier.train(faces, ids)
 lbph_classifier.train(faces, ids)
 ```
----
 
 Executa:
 
@@ -113,9 +105,8 @@ Executa:
 ```bash
 python treino_faces.py
 ```
----
 
-<h3>Execução do Sistema de Portaria</h3>
+<h2>Execução do Sistema de Portaria</h2>
 
 Para iniciar o sistema com interface Tkinter:
 
@@ -137,9 +128,7 @@ A aplicação inicia com:
 
 - Controle de Acesso
 
----
-
-<h3>O sistema utiliza:</h3>
+<h2>O sistema utiliza:</h2>
 
 ```python
 authorized_people = {
@@ -156,9 +145,8 @@ authorized_people = {
 ```nginx
 acessos_registrados.txt
 ```
----
 
-<h3>Formato do log:</h3>
+<h2>Formato do log:</h2>
 
 ```bash
 Data/Hora      Nome            RA            Status
@@ -166,9 +154,8 @@ Data/Hora      Nome            RA            Status
 02/12/2025 15:01:25  Breno Dario    RA1371392322016   LIBERADO
 02/12/2025 15:02:10  Desconhecido   N/A               NEGADO
 ```
----
 
-<h3>Interface – Recursos</h3>
+<h2>Interface – Recursos</h2>
 
 A UI possui:
 
@@ -195,9 +182,7 @@ A UI possui:
 
 - Último registro atualizado em tempo real
 
----
-
-<h3>Tecnologias Utilizadas</h3>
+<h2>Tecnologias Utilizadas</h2>
 
 - Python 3
 
@@ -211,22 +196,17 @@ A UI possui:
 
 - Haarcascade para detecção facial
 
----
-
-<h3>Dicas de Melhor Uso</h3>
+<h2>Dicas de Melhor Uso</h2>
 
 - Tenha fotos variadas na pasta de treinamento
 - Use boa iluminação
 -  Mantenha distância adequada da câmera
 -  Quanto mais imagens por usuário, melhor a precisão
 
----
-
-<h3>Autores</h3>
+<h2>Autores</h2>
 
 - Breno Dario
 - Alexandre Jesus
 
 Sistemas de Informação – 2025
 Projeto: **Portaria Inteligente com Reconhecimento Facial**
-
