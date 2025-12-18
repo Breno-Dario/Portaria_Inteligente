@@ -208,9 +208,10 @@ A UI possui:
 - Breno Dario
 
 <h2>Foto</h2>
-<img width="1363" height="721" alt="image" src="https://github.com/user-attachments/assets/81942a32-043a-4eb4-86e4-ba0a6ba67d65" />
+<img width="1889" height="1009" alt="image" src="https://github.com/user-attachments/assets/a02a40ba-24db-430d-abf0-a7ecf39610b6" />
 
 
 Sistemas de Informação – 2025
 Projeto: **Portaria Inteligente com Reconhecimento Facial**
+
 
