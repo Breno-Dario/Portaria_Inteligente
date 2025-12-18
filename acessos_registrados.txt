@@ -3,14 +3,6 @@ REGISTRO DE ACESSOS - PORTARIA INTELIGENTE
 ============================================================
 Data/Hora		Nome		RA		Status
 ------------------------------------------------------------
-15/12/2025 15:48:01	Breno Dario    	RA7777777777777	LIBERADO
-15/12/2025 15:48:04	Alexandro Jesus	RA1371392322041	NEGADO - Não autorizado
-15/12/2025 15:48:04	Alexandro Jesus	RA1371392322041	NEGADO - Não autorizado
-15/12/2025 15:48:04	Alexandro Jesus	RA1371392322041	NEGADO - Não autorizado
-15/12/2025 15:48:04	Alexandro Jesus	RA1371392322041	NEGADO - Não autorizado
-15/12/2025 15:48:04	Alexandro Jesus	RA1371392322041	NEGADO - Não autorizado
-15/12/2025 15:48:04	Alexandro Jesus	RA1371392322041	NEGADO - Não autorizado
-15/12/2025 15:48:06	Alexandro Jesus	RA1371392322041	NEGADO - Não autorizado
-15/12/2025 15:48:06	Alexandro Jesus	RA1371392322041	NEGADO - Não autorizado
-15/12/2025 15:48:06	Alexandro Jesus	RA1371392322041	NEGADO - Não autorizado
-15/12/2025 15:48:15	Breno Dario    	RA7777777777777	LIBERADO
+18/12/2025 14:33:31	Breno Dario    	RA7777777777777	LIBERADO
+18/12/2025 14:33:44	Geoger Fisher  	RA666666666666 	LIBERADO
+18/12/2025 14:33:49	Geoger Fisher  	RA666666666666 	LIBERADO

@@ -1,4 +1,4 @@
-#!/home/brenodario/Documents/Estudo/ReconhecimentodePessoa/.venv/bin/python3
+#!/home/brenodario/Documents/Estudo/Reconheciment-Facial-de-Portaria/.venv/bin/python3
 import sys
 from pip._internal.cli.main import main
 if __name__ == '__main__':

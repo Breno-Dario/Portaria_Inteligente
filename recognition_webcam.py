@@ -12,7 +12,7 @@ import platform
 
 
 # SISTEMA DE ACESSO E LOG
-authorized_people = {"Breno_Dario_RA7777777777777"}
+authorized_people = {"Breno_Dario_RA7777777777777", "Geoger_Fisher_RA666666666666"}
 last_access = {}
 access_granted_until = {}
 log_file = "acessos_registrados.txt"
@@ -124,8 +124,12 @@ except:
 
 
 # DETECTOR DE ROSTOS
-detector = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
+cascade_path = os.path.expanduser("haarcascade_frontalface_default.xml")
+detector = cv2.CascadeClassifier(cascade_path)
 
+if detector.empty():
+    raise RuntimeError("Haar cascade não encontrado")
+    
 def extract_ra_from_name(full_name):
     if "_RA" in full_name:
         try:
@@ -468,7 +472,7 @@ class FaceApp:
         
         tk.Label(
             footer,
-            text=f"Sistema de Registro de Acessos Breno Dario e Alexandre Jesus © {datetime.now().year} | Arquivo: {log_file}",
+            text=f"Sistema de Registro de Acessos Breno Dario © {datetime.now().year} | Arquivo: {log_file}",
             fg="#666666",
             bg="#111",
             font=("Segoe UI", 9)
@@ -542,7 +546,7 @@ class FaceApp:
         if self.running:
             return
         self.running = True
-        self.status_label.config(text="🔍 ANALISANDO...", fg=self.colors["accent"])
+        self.status_label.config(text="ANALISANDO...", fg=self.colors["accent"])
         threading.Thread(target=self.loop, daemon=True).start()
 
     def stop(self):
