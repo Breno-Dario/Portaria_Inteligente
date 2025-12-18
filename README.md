@@ -56,11 +56,11 @@ Cada usuário deve ter sua pasta com fotos:
 
 ```bash
 dataset/
-   Breno_Dario_RA1371392322016/
+   Nome__Sobrenome_RA7777777777777.1/
        1.jpg
        2.jpg
        ...
-   Alexandro_Jesus_RA1371392322041.1/
+   Nome_Sobrenome2_RA555555555555.1/
        1.jpg
        2.jpg
 ```
@@ -68,7 +68,7 @@ dataset/
 Os nomes das pastas devem seguir o padrão:
 
 ```nginx
-Nome_Sobrenome_RA123456789
+Nome_Sobrenome_RA222222222222
 ```
 
 <h2>Treinamento do Reconhecedor</h2>
@@ -132,8 +132,8 @@ A aplicação inicia com:
 
 ```python
 authorized_people = {
-    "Breno_Dario_RA1371392322016", 
-    "Alexandro_Jesus_RA1371392322041.1"
+    "Nome__Sobrenome_RA7777777777777.1", 
+    "Nome_Sobrenome2_RA555555555555.1"
 }
 ```
 
@@ -151,7 +151,7 @@ acessos_registrados.txt
 ```bash
 Data/Hora      Nome            RA            Status
 ---------------------------------------------------------
-02/12/2025 15:01:25  Breno Dario    RA1371392322016   LIBERADO
+02/12/2025 15:01:25  Nome Sobrenome    RA777777777777   LIBERADO
 02/12/2025 15:02:10  Desconhecido   N/A               NEGADO
 ```
 
@@ -206,7 +206,6 @@ A UI possui:
 <h2>Autores</h2>
 
 - Breno Dario
-- Alexandre Jesus
 
 <h2>Foto</h2>
 <img width="1363" height="721" alt="image" src="https://github.com/user-attachments/assets/81942a32-043a-4eb4-86e4-ba0a6ba67d65" />
